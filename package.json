@@ -1,0 +1,43 @@
+{
+  "author": "Andrew Abramov <andrewblond@yandex.com>",
+  "description": "BEM sets for ENB",
+  "name": "enb-bem-sets",
+  "version": "0.0.1",
+  "repository": "git://github.com/andrewblond/enb-bem-sets",
+  "homepage": "https://github.com/andrewblond/enb-bem-sets",
+  "bugs": "https://github.com/andrewblond/enb-bem-sets/issues",
+  "licenses": [{
+    "type": "MIT",
+    "url": "https://github.com/andrewblond/enb-bem-sets/blob/master/LICENSE"
+  }],
+  "contributors": [
+    {
+      "name": "Andrew Abramov",
+      "email": "andrewblond@yandex.com"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "peerDependencies": {
+    "enb": ">= 0.12.0"
+  },
+  "dependencies": {
+    "vow": "0.4.3",
+    "enb-pseudo-levels": "0.1.1",
+    "bem-naming": "0.0.3"
+  },
+  "devDependencies": {
+    "enb": ">= 0.12.0",
+    "enb-validate-code": "0.0.1",
+    "jshint": "2.5.1",
+    "jscs": "1.4.5"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "jshint . && jscs -c .jscs.js .",
+    "build": "cd examples/docs && enb make sets && cd ../examples && enb make sets && cd ../specs && enb make sets",
+    "clean": "rm -rf examples/docs/docs.sets && rm -rf examples/docs/.enb/tmp && rm -rf examples/examples/examples.sets && rm -rf examples/examples/.enb/tmp && rm -rf examples/specs/specs.sets && rm -rf examples/specs/.enb/tmp"
+  }
+}
