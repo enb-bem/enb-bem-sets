@@ -15,7 +15,7 @@ module.exports = function (config) {
         bundleSuffixes: ['specs']
     });
 
-    config.nodes('*sets/*', function (nodeConfig) {
+    config.nodes('specs.sets/*', function (nodeConfig) {
         nodeConfig.addTechs([
             [require('enb/techs/levels'), { levels: levels }],
             [require('enb/techs/files'), { depsTarget: '?.bemdecl.js' }],
@@ -25,7 +25,7 @@ module.exports = function (config) {
         nodeConfig.addTarget('?.spec.js');
     });
 
-    config.nodes('*sets/*/*.bundles/*', function () {});
+    config.nodes('specs.sets/*/*.bundles/*', function () {});
 };
 
 function getLevels(config) {

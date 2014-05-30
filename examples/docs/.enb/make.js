@@ -14,7 +14,7 @@ module.exports = function (config) {
         suffixes: ['md']
     });
 
-    config.nodes('*sets/*', function (nodeConfig) {
+    config.nodes('docs.sets/*', function (nodeConfig) {
         nodeConfig.addTechs([
             [require('enb/techs/levels'), { levels: levels }],
             [require('enb/techs/files'), { depsTarget: '?.bemdecl.js' }],

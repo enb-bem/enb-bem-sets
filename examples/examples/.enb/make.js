@@ -13,7 +13,7 @@ module.exports = function (config) {
         suffixes: ['examples']
     });
 
-    config.nodes('*sets/*/*', function () {});
+    config.nodes('examples.sets/*/*', function () {});
 };
 
 function getLevels(config) {
