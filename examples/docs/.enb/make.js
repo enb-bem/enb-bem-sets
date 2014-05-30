@@ -16,7 +16,6 @@ module.exports = function (config) {
 
     config.nodes('*sets/*', function (nodeConfig) {
         nodeConfig.addTechs([
-            [require('../../../techs/bemdecl-by-keeps')],
             [require('enb/techs/levels'), { levels: levels }],
             [require('enb/techs/files'), { depsTarget: '?.bemdecl.js' }],
             [require('./techs/md')]
