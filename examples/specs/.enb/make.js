@@ -2,7 +2,7 @@ var path = require('path');
 var rootPath = path.join(__dirname, '..', '..', '..');
 
 module.exports = function (config) {
-    var sets = require(rootPath)(config);
+    var sets = require(rootPath)('sets',config);
     var levels = getLevels(config);
 
     sets.keepsAndBundles('specs.sets', {
