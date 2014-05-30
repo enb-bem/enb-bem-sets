@@ -1,7 +1,7 @@
 {
   "author": "Andrew Abramov <andrewblond@yandex.com>",
   "name": "enb-bem-sets",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "BEM sets for ENB",
   "repository": "git://github.com/andrewblond/enb-bem-sets",
   "homepage": "https://github.com/andrewblond/enb-bem-sets",
