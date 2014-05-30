@@ -1,11 +1,15 @@
 var path = require('path');
 var rootPath = path.join(__dirname, '..', '..', '..');
+var keepsAndBundles = require('../../../plugins/keeps-and-bundles');
+var sets = require(rootPath);
 
 module.exports = function (config) {
-    var sets = require(rootPath)('sets',config);
+    var maker = sets.create('sets', config);
+    var specs = sets.use(keepsAndBundles, maker);
     var levels = getLevels(config);
 
-    sets.keepsAndBundles('specs.sets', {
+    specs.build({
+        destPath: 'specs.sets',
         levels: levels,
         fileSuffixes: ['spec.js'],
         bundleSuffixes: ['specs']

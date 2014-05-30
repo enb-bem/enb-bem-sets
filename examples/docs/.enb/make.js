@@ -1,11 +1,15 @@
 var path = require('path');
 var rootPath = path.join(__dirname, '..', '..', '..');
+var blockKeeps = require('../../../plugins/block-keeps');
+var sets = require(rootPath);
 
 module.exports = function (config) {
-    var sets = require(rootPath)('sets', config);
+    var maker = sets.create('sets', config);
+    var docs = sets.use(blockKeeps, maker);
     var levels = getLevels(config);
 
-    sets.blockKeeps('docs.sets', {
+    docs.build({
+        destPath: 'docs.sets',
         levels: levels,
         suffixes: ['md']
     });

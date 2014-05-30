@@ -1,10 +1,14 @@
 var path = require('path');
 var rootPath = path.join(__dirname, '..', '..', '..');
+var bundles = require('../../../plugins/bundles');
+var sets = require(rootPath);
 
 module.exports = function (config) {
-    var sets = require(rootPath)('sets',config);
+    var maker = sets.create('sets', config);
+    var examples = sets.use(bundles, maker);
 
-    sets.bundles('examples.sets', {
+    examples.build({
+        destPath: 'examples.sets',
         levels: getLevels(config),
         suffixes: ['examples']
     });
