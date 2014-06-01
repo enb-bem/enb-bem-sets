@@ -37,7 +37,7 @@
   "scripts": {
     "test": "npm run lint",
     "lint": "jshint . && jscs -c .jscs.js .",
-    "build": "cd examples/docs && enb make sets && cd ../examples && enb make sets",
-    "clean": "rm -rf examples/docs/docs.sets && rm -rf examples/docs/.enb/tmp && rm -rf examples/examples/examples.sets && rm -rf examples/examples/.enb/tmp"
+    "build": "cd examples/examples && enb make sets",
+    "clean": "rm -rf examples/examples/examples.sets && rm -rf examples/examples/.enb/tmp"
   }
 }
