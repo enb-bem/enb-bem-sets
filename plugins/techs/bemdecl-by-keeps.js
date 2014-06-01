@@ -5,7 +5,6 @@ module.exports = require('enb/lib/build-flow').create()
     .name('bemdecl-by-keeps')
     .target('target', '?.bemdecl.js')
     .builder(function () {
-        var target = this._target;
         var node = this.node;
         var dir = node.getDir();
         var deps = [];
@@ -28,8 +27,6 @@ module.exports = require('enb/lib/build-flow').create()
                         });
                     }
                 });
-
-                node.resolveTarget(target, deps);
 
                 return 'exports.deps = ' + JSON.stringify(deps) + ';';
             });
