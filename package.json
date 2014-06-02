@@ -36,8 +36,6 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "npm run lint",
-    "lint": "jshint . && jscs -c .jscs.js .",
-    "build": "cd examples/examples && enb make sets",
-    "clean": "rm -rf examples/examples/examples.sets && rm -rf examples/examples/.enb/tmp"
+    "lint": "jshint . && jscs -c .jscs.js ."
   }
 }
