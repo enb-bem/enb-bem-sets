@@ -23,7 +23,8 @@
     "enb": ">= 0.13.0"
   },
   "dependencies": {
-    "vow": "0.4.5"
+    "vow": "0.4.5",
+    "coa": "0.4.1"
   },
   "devDependencies": {
     "enb": ">= 0.13.0",
@@ -32,6 +33,9 @@
     "jscs": "1.4.5"
   },
   "main": "lib/index.js",
+  "bin": {
+    "sets": "bin/sets.js"
+  },
   "scripts": {
     "test": "npm run lint",
     "lint": "jshint . && jscs -c .jscs.js ."
