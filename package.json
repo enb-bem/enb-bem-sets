@@ -23,8 +23,12 @@
     "enb": ">= 0.13.0"
   },
   "dependencies": {
+    "coa": "0.4.1",
     "vow": "0.4.5",
-    "coa": "0.4.1"
+    "inherit": "2.2.2",
+    "connect": "2.19.1",
+    "send": "0.4.1",
+    "mime": "1.2.9"
   },
   "devDependencies": {
     "enb": ">= 0.13.0",
@@ -34,7 +38,8 @@
   },
   "main": "lib/index.js",
   "bin": {
-    "sets": "bin/sets.js"
+    "sets": "bin/sets.js",
+    "server": "bin/server.js"
   },
   "scripts": {
     "test": "npm run lint",
