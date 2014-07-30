@@ -38,8 +38,7 @@
   },
   "main": "lib/index.js",
   "bin": {
-    "sets": "bin/sets.js",
-    "server": "bin/server.js"
+    "sets": "bin/sets.js"
   },
   "scripts": {
     "test": "npm run lint",
