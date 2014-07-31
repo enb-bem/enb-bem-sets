@@ -3,6 +3,7 @@ var META_TASK_NAME = '__sets__';
 var path = require('path');
 var coa = require('coa');
 var vow = require('vow');
+var colors = require('colors');
 var pkg = require('../package.json');
 var MakePlatform = require('enb/lib/make');
 var Server = require('../lib/server/server');
@@ -62,8 +63,11 @@ coa.Cmd()
         .act(function (opts, args) {
             return makePlatform.init(path.resolve(opts.dir))
                 .then(function () {
+                    var logger = makePlatform.getLogger();
+                    var startTime = new Date();
+
                     if (opts.hideWarnings) {
-                        makePlatform.getLogger().hideWarnings();
+                        logger.hideWarnings();
                     }
 
                     if (!opts.noCache) {
@@ -76,14 +80,20 @@ coa.Cmd()
                                 console.log(makePlatform.getBuildGraph().render());
                             }
 
+                            logger.log('build finished - ' + colors.red((new Date() - startTime) + 'ms'));
+
                             makePlatform.saveCache();
                             return makePlatform.destruct();
                         });
                 })
                 .fail(function (err) {
+                    var logger = makePlatform.getLogger();
+
                     if (opts.graph) {
                         console.log(makePlatform.getBuildGraph().render());
                     }
+
+                    logger.log('build failed');
 
                     console.error(err.stack);
                     process.exit(1);

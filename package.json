@@ -28,7 +28,8 @@
     "inherit": "2.2.2",
     "connect": "2.19.1",
     "send": "0.4.1",
-    "mime": "1.2.9"
+    "mime": "1.2.9",
+    "colors": "0.6.2"
   },
   "devDependencies": {
     "enb": ">= 0.13.0",
